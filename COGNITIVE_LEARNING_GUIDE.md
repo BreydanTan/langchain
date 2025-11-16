@@ -23,6 +23,8 @@
 
 | 文件 | 用途 | 语言 |
 |------|------|------|
+| `BEGINNER_GUIDE_DETAILED.md` | ⭐ **零基础超详细入门指南**（强烈推荐先看这个！） | 中文 |
+| `BEGINNER_GUIDE_DETAILED_EN.md` | ⭐ **Complete beginner guide**（Start here!） | English |
 | `PROJECT_COGNITIVE_STATE.md` | 学习进度追踪器 | 中文 |
 | `PROJECT_COGNITIVE_STATE_EN.md` | 学习进度追踪器 | English |
 | `LEARNING_MODULES_COMPLETE.md` | 完整的 8 个学习模块 | 中文 |
@@ -30,11 +32,28 @@
 
 ### 🚀 如何使用
 
+#### ⭐ 新手必看：先读详细入门指南！
+
+**如果你是完全零基础的初学者，强烈建议先阅读：**
+
+📖 `BEGINNER_GUIDE_DETAILED.md`（中文）或 `BEGINNER_GUIDE_DETAILED_EN.md`（English）
+
+这份指南包含：
+- ✅ 详细的环境配置步骤（Python 安装、pip 命令、API Key 获取）
+- ✅ 每个核心概念的通俗易懂解释（用类比、例子）
+- ✅ 3 个完整的可运行示例程序
+- ✅ 一步一步的学习路径规划
+
+**读完详细入门指南后，再继续下面的模块学习。**
+
+---
+
 #### 方式 1：自学模式（推荐）
 
-1. 打开 `LEARNING_MODULES_COMPLETE.md`（或英文版 `LEARNING_MODULES_COMPLETE_EN.md`）
-2. 按顺序阅读每个模块
-3. **重要：** 每个模块末尾有"知识提取挑战"
+1. **第一步**：阅读 `BEGINNER_GUIDE_DETAILED.md` 完成环境配置
+2. **第二步**：打开 `LEARNING_MODULES_COMPLETE.md`（或英文版）
+3. 按顺序阅读每个模块
+4. **重要：** 每个模块末尾有"知识提取挑战"
    - 先尝试回答（不要看下一模块！）
    - 在下一个模块开头查看答案
    - 这种"延迟反馈"会增强记忆
@@ -117,6 +136,8 @@ This curriculum is designed based on the following cognitive science principles:
 
 | File | Purpose | Language |
 |------|---------|----------|
+| `BEGINNER_GUIDE_DETAILED.md` | ⭐ **Complete beginner guide** (Read this first!) | 中文 |
+| `BEGINNER_GUIDE_DETAILED_EN.md` | ⭐ **Complete beginner guide** (Start here!) | English |
 | `PROJECT_COGNITIVE_STATE.md` | Learning progress tracker | 中文 |
 | `PROJECT_COGNITIVE_STATE_EN.md` | Learning progress tracker | English |
 | `LEARNING_MODULES_COMPLETE.md` | Complete 8 learning modules | 中文 |
@@ -124,11 +145,28 @@ This curriculum is designed based on the following cognitive science principles:
 
 ### 🚀 How to Use
 
+#### ⭐ Beginners: Start with the Detailed Guide!
+
+**If you're a complete beginner, strongly recommend reading first:**
+
+📖 `BEGINNER_GUIDE_DETAILED_EN.md` (English) or `BEGINNER_GUIDE_DETAILED.md` (中文)
+
+This guide includes:
+- ✅ Detailed environment setup (Python installation, pip commands, API key setup)
+- ✅ Easy-to-understand explanations of core concepts (with analogies & examples)
+- ✅ 3 complete working example programs
+- ✅ Step-by-step learning path
+
+**After reading the detailed guide, proceed to the module learning below.**
+
+---
+
 #### Method 1: Self-Study Mode (Recommended)
 
-1. Open `LEARNING_MODULES_COMPLETE_EN.md` (or Chinese version `LEARNING_MODULES_COMPLETE.md`)
-2. Read each module in sequence
-3. **Important:** Each module ends with "Knowledge Challenges"
+1. **Step 1**: Read `BEGINNER_GUIDE_DETAILED_EN.md` and complete environment setup
+2. **Step 2**: Open `LEARNING_MODULES_COMPLETE_EN.md` (or Chinese version)
+3. Read each module in sequence
+4. **Important:** Each module ends with "Knowledge Challenges"
    - Try to answer first (don't peek at the next module!)
    - Check answers at the beginning of the next module
    - This "delayed feedback" enhances memory retention
