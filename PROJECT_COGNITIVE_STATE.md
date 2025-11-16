@@ -6,72 +6,82 @@
 ## 1. 核心指令 (COGNITIVE_CORE)
 # (AI必须在每次恢复时重新加载这些指令)
 
-* **角色：** 认知架构学习引擎。
-* **原则1 (CLT)：** 假设我是新手。最小化外在负荷。使用"少即是多"、"信令"和"双重编码"（文本图表）。
-* **原则2 (Expertise)：** 必须使用"直接指导"和"集中练习"。严禁"探究式学习"。
-* **原则3 (Retrieval)：** 拒绝被动。每个教学单元后必须有"生成性"的"知识提取挑战"。
+* **角色：** 源码认知架构师。
+* **原则1 (CLT)：** "深度优先，逐个击破"。一次只深入一个文件，但必须详尽分析。使用"双重编码"（Mermaid图表）。
+* **原则2 (Source)：** "源码即课本"。必须引用代码，必须解释"Why"（设计哲学），必须连接上下文（Imports）。
+* **原则3 (Retrieval)：** 拒绝被动。每个教学单元后必须有"生成性"和"分析性"的"知识提取挑战"。
 * **原则4 (State)：** 必须解析 `LEARNING_STATE` 并自动执行 `[下一步行动]`。必须在每次响应结束时生成此文件的完整更新。
 
 ---
 
 ## 2. 学习进度 (LEARNING_STATE)
 
-**项目目标：** LangChain 是一个用于构建 AI 代理和 LLM 驱动应用的 Python 框架。它通过可组合的抽象（Runnable、Messages、Prompts、Chat Models 等）简化复杂 AI 应用的开发，并提供与第三方服务的集成。
+**项目目标：** 通过深入分析LangChain核心源码，精通其架构设计与执行原理。
 
 **学习大纲（教学图式）：**
-* [X] **模块 1：项目架构与核心理念** - 理解 Monorepo 结构、设计哲学和核心抽象的"为什么"
-* [X] **模块 2：消息系统 (Messages)** - 掌握 LangChain 的消息对象（HumanMessage、AIMessage、SystemMessage）
-* [X] **模块 3：提示工程 (Prompts)** - 学习提示模板系统和最佳实践
-* [X] **模块 4：核心抽象 Runnable** - 深入理解 Runnable 协议（invoke、batch、stream）
-* [X] **模块 5：聊天模型 (Chat Models)** - 理解 BaseChatModel 抽象和模型集成
-* [X] **模块 6：链式组合 (Chains & LCEL)** - 学习如何使用 LangChain Expression Language 组合组件
-* [X] **模块 7：工具与代理 (Tools & Agents)** - 实现工具调用和构建自主代理
-* [X] **模块 8：高级特性** - Callbacks、Streaming、检索增强生成 (RAG)
-* [ ] **最终阶段：交叉练习与实战项目** - 综合运用所有概念构建完整应用
+* [X] 模块 1：万物皆`Runnable` - 核心抽象 (文件: `libs/core/langchain_core/runnables/base.py`)
+* [ ] 模块 2：`Runnable`的组合 - 序列 (文件: `libs/core/langchain_core/runnables/passthrough.py` 和 `config.py`)
+* [ ] 模块 3：`Runnable`的实现 - Prompts (文件: `libs/core/langchain_core/prompts/base.py`)
+* [ ] 模块 4：`Runnable`的实现 - LLMs (文件: `libs/core/langchain_core/language_models/llms.py`)
+* [ ] 模块 5：`Runnable`的实现 - ChatModels (文件: `libs/core/langchain_core/language_models/chat_models.py`)
+* [ ] 模块 6：(交叉练习) LangChain表达式语言(LCEL)的完整流程
 
 **当前状态：**
-* **已完成模块：** ✅ 全部 8 个核心模块已完成！(2025-11-16)
-    * ✅ 模块 1：项目架构与核心理念
-        - Monorepo 结构、三大设计原则
-    * ✅ 模块 2：消息系统 (Messages)
-        - HumanMessage、AIMessage、SystemMessage、ToolMessage
-    * ✅ 模块 3：提示工程 (Prompts)
-        - PromptTemplate、ChatPromptTemplate、MessagesPlaceholder
-    * ✅ 模块 4：核心抽象 Runnable
-        - invoke/batch/stream/ainvoke、RunnableSequence、RunnableParallel
-    * ✅ 模块 5：聊天模型 (Chat Models)
-        - BaseChatModel、bind_tools、with_structured_output
-    * ✅ 模块 6：链式组合 (LCEL)
-        - Pipe 操作符、并行组合、条件分支、RAG 链
-    * ✅ 模块 7：工具与代理 (Tools & Agents)
-        - @tool 装饰器、Agent 循环、LangGraph 简介
-    * ✅ 模块 8：高级特性
-        - Callbacks、Streaming、Memory、Caching、Output Parsers
-
-* **完整学习材料：** 参见 `LEARNING_MODULES_COMPLETE.md`
+* **已完成模块：**
+    * ✅ **模块 1：万物皆`Runnable` - 核心抽象** (完成时间: 2025-11-16)
+        - 学习内容：
+          * `Runnable` 的设计哲学：统一接口实现可组合性
+          * 核心抽象方法 `invoke` 及其作为唯一必需实现方法的原因
+          * 默认实现（`ainvoke`、`batch`、`stream`）如何基于 `invoke` 构建
+          * 泛型类型系统 `Generic[Input, Output]` 保证类型安全
+          * `__or__` 操作符的组合魔法：创建 `RunnableSequence`
+        - 关键源码位置：
+          * `libs/core/langchain_core/runnables/base.py:123` - `Runnable` 类定义
+          * `libs/core/langchain_core/runnables/base.py:817` - `invoke` 抽象方法
+          * `libs/core/langchain_core/runnables/base.py:840` - `ainvoke` 默认实现
+          * `libs/core/langchain_core/runnables/base.py:863` - `batch` 默认实现
+          * `libs/core/langchain_core/runnables/base.py:1126` - `stream` 默认实现
+          * `libs/core/langchain_core/runnables/base.py:616` - `__or__` 操作符
+        - 核心洞察：
+          * 只要实现 `invoke`，就自动获得异步、批处理、流式的支持
+          * `config` 参数实现了横切关注点的优雅分离
+          * 线程池的使用使批处理对 I/O 密集型任务高效
 
 * **下一步行动：**
-    * **[推荐] -> 实战练习** - 构建技术文档问答系统（见模块8最终挑战）
-    * **[推荐] -> 阅读源码** - 深入研究 `libs/core/tests/` 中的测试用例
-    * **[推荐] -> 查看示例** - 浏览官方文档的实战案例
+    * **[待执行] -> 模块 2：`Runnable`的组合 - 序列 (文件: `libs/core/langchain_core/runnables/passthrough.py` 和 `config.py`)** - *回复"继续"开始下一模块的深入教学。*
 
 ---
 
 ## 3. 学习笔记 (LEARNING_NOTES)
-# (此区域将记录你的个人笔记、疑问和关键洞察)
+# (此区域记录您的个人笔记、疑问和关键洞察)
 
-### 模块 1 关键点
-* **心智地图建立：** LangChain = 可组合的乐高积木，核心是 `Runnable` 协议
-* **记住路径：** `/home/user/langchain/libs/core/langchain_core/` (核心代码位置)
-* **4 个必记方法：** `invoke()`, `batch()`, `stream()`, `ainvoke()`
-* **Pipe 符号：** `component1 | component2` = RunnableSequence (自动支持所有方法)
+### 模块 1 关键记忆点
+* **核心契约：** `invoke(input: Input) -> Output` 是唯一必须实现的方法
+* **类型参数：** `Runnable[Input, Output]` - 两个泛型参数确保组合的类型安全
+* **4 个核心方法：** `invoke`（同步）、`ainvoke`（异步）、`batch`（批处理）、`stream`（流式）
+* **组合符号：** `A | B` 等价于 `RunnableSequence(A, B)`
+* **设计哲学：** "统一接口 → 自由组合 → 自动继承能力"
+
+### 待回答的挑战问题
+（在此记录您对"知识提取挑战"的答案，以便复习）
+
+1. 为什么需要 Runnable？
+2. 核心契约是什么？
+3. 为什么 ainvoke/batch/stream 可以有默认实现？
+4. SQLExecutor 应该如何声明类型？
+5. 如果 invoke 不是抽象方法会怎样？
+6. executor.map 的优势是什么？
+7. Runnable 组合的类型推导？
 
 ---
 
-## 4. 元数据 (META)
+## 4. 认知元数据 (METADATA)
 
-* **创建时间：** 2025-11-16
-* **最后更新：** 2025-11-16 (模块 1 完成)
-* **项目路径：** `/home/user/langchain`
-* **当前分支：** `claude/cognitive-learning-engine-01NCgLE2JZcoqsgED5Ye76Ep`
-* **LangChain 核心模块路径：** `/home/user/langchain/libs/core/langchain_core/`
+**创建时间：** 2025-11-16
+**最后更新：** 2025-11-16 (模块 1 完成)
+**项目：** LangChain (https://github.com/langchain-ai/langchain)
+**项目路径：** `/home/user/langchain`
+**当前分支：** `claude/langchain-deep-analysis-01MnJ66aZzYtsNCaB67h5ANp`
+**分析深度：** 深度优先 (Depth-First)
+**认知策略：** 集中练习 (Deliberate Practice) + 主动提取 (Active Retrieval)
+**当前进度：** 1/6 模块完成 (16.7%)
