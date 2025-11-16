@@ -20,27 +20,40 @@
 
 **学习大纲（教学图式）：**
 * [X] **模块 1：项目架构与核心理念** - 理解 Monorepo 结构、设计哲学和核心抽象的"为什么"
-* [ ] **模块 2：消息系统 (Messages)** - 掌握 LangChain 的消息对象（HumanMessage、AIMessage、SystemMessage）
-* [ ] **模块 3：提示工程 (Prompts)** - 学习提示模板系统和最佳实践
-* [ ] **模块 4：核心抽象 Runnable** - 深入理解 Runnable 协议（invoke、batch、stream）
-* [ ] **模块 5：聊天模型 (Chat Models)** - 理解 BaseChatModel 抽象和模型集成
-* [ ] **模块 6：链式组合 (Chains & LCEL)** - 学习如何使用 LangChain Expression Language 组合组件
-* [ ] **模块 7：工具与代理 (Tools & Agents)** - 实现工具调用和构建自主代理
-* [ ] **模块 8：高级特性** - Callbacks、Streaming、检索增强生成 (RAG)
+* [X] **模块 2：消息系统 (Messages)** - 掌握 LangChain 的消息对象（HumanMessage、AIMessage、SystemMessage）
+* [X] **模块 3：提示工程 (Prompts)** - 学习提示模板系统和最佳实践
+* [X] **模块 4：核心抽象 Runnable** - 深入理解 Runnable 协议（invoke、batch、stream）
+* [X] **模块 5：聊天模型 (Chat Models)** - 理解 BaseChatModel 抽象和模型集成
+* [X] **模块 6：链式组合 (Chains & LCEL)** - 学习如何使用 LangChain Expression Language 组合组件
+* [X] **模块 7：工具与代理 (Tools & Agents)** - 实现工具调用和构建自主代理
+* [X] **模块 8：高级特性** - Callbacks、Streaming、检索增强生成 (RAG)
 * [ ] **最终阶段：交叉练习与实战项目** - 综合运用所有概念构建完整应用
 
 **当前状态：**
-* **已完成模块：**
-    * ✅ 模块 1：项目架构与核心理念 (2025-11-16)
-        - 学习了 Monorepo 结构 (`core/` 是地基)
-        - 理解了 3 大设计原则：
-          1. 一切皆 Runnable (统一接口)
-          2. 声明式组合 (Pipe 操作符 `|`)
-          3. 插件式集成 (依赖倒置)
-        - 关键文件：`libs/core/langchain_core/runnables/base.py:124`
+* **已完成模块：** ✅ 全部 8 个核心模块已完成！(2025-11-16)
+    * ✅ 模块 1：项目架构与核心理念
+        - Monorepo 结构、三大设计原则
+    * ✅ 模块 2：消息系统 (Messages)
+        - HumanMessage、AIMessage、SystemMessage、ToolMessage
+    * ✅ 模块 3：提示工程 (Prompts)
+        - PromptTemplate、ChatPromptTemplate、MessagesPlaceholder
+    * ✅ 模块 4：核心抽象 Runnable
+        - invoke/batch/stream/ainvoke、RunnableSequence、RunnableParallel
+    * ✅ 模块 5：聊天模型 (Chat Models)
+        - BaseChatModel、bind_tools、with_structured_output
+    * ✅ 模块 6：链式组合 (LCEL)
+        - Pipe 操作符、并行组合、条件分支、RAG 链
+    * ✅ 模块 7：工具与代理 (Tools & Agents)
+        - @tool 装饰器、Agent 循环、LangGraph 简介
+    * ✅ 模块 8：高级特性
+        - Callbacks、Streaming、Memory、Caching、Output Parsers
+
+* **完整学习材料：** 参见 `LEARNING_MODULES_COMPLETE.md`
+
 * **下一步行动：**
-    * **[等待中] -> 知识提取挑战** - *用户需要回答 3 个生成性问题以巩固记忆。*
-    * 挑战完成后 → 进入 **模块 2：消息系统 (Messages)**
+    * **[推荐] -> 实战练习** - 构建技术文档问答系统（见模块8最终挑战）
+    * **[推荐] -> 阅读源码** - 深入研究 `libs/core/tests/` 中的测试用例
+    * **[推荐] -> 查看示例** - 浏览官方文档的实战案例
 
 ---
 
