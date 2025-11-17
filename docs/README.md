@@ -85,6 +85,21 @@
 
 ---
 
+### [模块 7：RunnableParallel - 并行执行深度剖析](./module-07-runnable-parallel-ZH.md)
+**英文版**：[Module 7: RunnableParallel Deep-Dive](./module-07-runnable-parallel-EN.md)
+
+**核心内容**：
+- 并行执行的设计思想和使用场景
+- `invoke()` vs `ainvoke()` 的并行实现机制
+- 线程池和异步协程的性能对比
+- RAG、多模型对比等实战模式
+- 嵌套并行和复杂数据流构建
+
+**关键洞察**：
+> `RunnableParallel` 所有分支接收相同输入，并发执行，返回字典结果！
+
+---
+
 ## 🎨 架构总览
 
 ```
@@ -162,11 +177,56 @@ translator = RunnableParallel(
 
 ## 📊 学习统计
 
-- **总模块数**：6 个核心模块
-- **文档数量**：10 个文件（中英双语）
-- **代码示例**：50+ 个实际例子
-- **Mermaid 图表**：15+ 个架构可视化
-- **知识挑战**：30+ 个测试问题
+- **总模块数**：7 个核心模块
+- **文档数量**：14+ 个文件（中英双语）
+- **代码示例**：70+ 个实际例子
+- **Mermaid 图表**：20+ 个架构可视化
+- **知识挑战**：40+ 个测试问题
+- **可运行示例**：4 个完整示例程序
+
+---
+
+## 🛠️ 辅助资源
+
+### [术语表 (GLOSSARY.md)](./GLOSSARY.md)
+**Bilingual glossary** covering all core LangChain concepts:
+- Runnable, RunnableSequence, RunnableParallel
+- Prompts, Messages, Templates
+- LLM, ChatModel, OutputParser
+- Tools, Agents, RAG
+- Type safety, Config propagation, Callbacks
+
+**双语术语表**，涵盖所有核心 LangChain 概念。
+
+---
+
+### [常见问题 (FAQ.md)](./FAQ.md)
+**Bilingual FAQ** answering 16 common questions:
+- How does the `|` operator work?
+- When to use PromptTemplate vs ChatPromptTemplate?
+- How to debug chains?
+- Performance optimization tips
+- Error handling strategies
+
+**双语常见问题**，回答 16 个常见问题。
+
+---
+
+### [代码示例 (examples/)](./examples/)
+**Runnable example programs** (no API keys required):
+
+| File | Topic | Description |
+|------|-------|-------------|
+| [01_basic_runnable.py](./examples/01_basic_runnable.py) | Runnable Interface | Core abstraction, composition with `\|` |
+| [02_prompt_templates.py](./examples/02_prompt_templates.py) | Prompt Templates | PromptTemplate, ChatPromptTemplate, MessagesPlaceholder |
+| [03_runnable_parallel.py](./examples/03_runnable_parallel.py) | Parallel Execution | RunnableParallel, concurrent branches |
+| [04_complete_chain.py](./examples/04_complete_chain.py) | Complete Chains | LCEL chains, RAG pattern, conditional logic |
+
+**All examples use mock components** - learn offline without API keys!
+
+**所有示例使用模拟组件** - 无需 API 密钥即可离线学习！
+
+See [examples/README.md](./examples/README.md) for usage instructions.
 
 ---
 
@@ -205,9 +265,21 @@ translator = RunnableParallel(
 
 ## 📌 快速导航
 
+### 核心模块 | Core Modules
+
 | 模块 | 中文 | English | 主题 |
 |------|------|---------|------|
 | 1 | [链接](./module-01-runnable-core-ZH.md) | [Link](./module-01-runnable-core-EN.md) | Runnable 核心 |
 | 2 | [链接](./module-02-runnable-sequence-ZH.md) | [Link](./module-02-runnable-sequence-EN.md) | 序列组合 |
 | 3 | [链接](./module-03-prompts-implementation-ZH.md) | [Link](./module-03-prompts-implementation-EN.md) | Prompts 实现 |
 | 4-6 | [链接](./module-04-05-06-summary-ZH.md) | [Link](./module-04-05-06-summary-EN.md) | 完整流程 |
+| 7 | [链接](./module-07-runnable-parallel-ZH.md) | [Link](./module-07-runnable-parallel-EN.md) | 并行执行 |
+
+### 辅助资源 | Supporting Resources
+
+| 资源 | 链接 | 说明 |
+|------|------|------|
+| 术语表 | [GLOSSARY.md](./GLOSSARY.md) | 双语术语表，涵盖所有核心概念 |
+| 常见问题 | [FAQ.md](./FAQ.md) | 16+ 个常见问题解答（双语） |
+| 代码示例 | [examples/](./examples/) | 4 个可运行示例程序 |
+| 示例说明 | [examples/README.md](./examples/README.md) | 示例使用指南 |
