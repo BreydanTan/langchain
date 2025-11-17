@@ -72,3 +72,11 @@ To improve your LLM application development, pair LangChain with:
 - [API Reference](https://reference.langchain.com/python) – Detailed reference on navigating base packages and integrations for LangChain.
 - [Contributing Guide](https://docs.langchain.com/oss/python/contributing/overview) – Learn how to contribute to LangChain projects and find good first issues.
 - [Code of Conduct](https://github.com/langchain-ai/langchain/blob/master/.github/CODE_OF_CONDUCT.md) – Our community guidelines and standards for participation.
+
+## Learning Resources
+
+This repository includes comprehensive learning materials for mastering LangChain's architecture and design patterns:
+
+- **[Deep-Dive Learning Series](docs/README.md)** – Source code-driven tutorials covering core abstractions (`Runnable`, `RunnableSequence`, Prompts, LLMs, ChatModels, and LCEL execution flow). Each module provides in-depth analysis with code references, design philosophy explanations, and knowledge challenges. Available in both Chinese and English.
+
+These materials complement the official documentation by providing detailed explorations of LangChain's internal implementations and architectural decisions.
