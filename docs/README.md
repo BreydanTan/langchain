@@ -100,6 +100,36 @@
 
 ---
 
+### [模块 8：RunnableLambda - 将任意函数转换为 Runnable](./module-08-runnable-lambda-ZH.md)
+**英文版**：[Module 8: RunnableLambda - Converting Functions to Runnables](./module-08-runnable-lambda-EN.md)
+
+**核心内容**：
+- 将普通 Python 函数集成到 LCEL 链中
+- 同步和异步函数的处理机制
+- 类型推断：从函数签名提取类型信息
+- 依赖分析：自动检测嵌套 Runnable
+- 递归 Runnable：动态链构建
+
+**关键洞察**：
+> `RunnableLambda` 是胶水组件，让任意 Python 函数无缝集成到 LangChain 生态！
+
+---
+
+### [模块 9：OutputParser - 结构化输出解析](./module-09-output-parser-ZH.md)
+**英文版**：[Module 9: OutputParser - Structured Output Parsing](./module-09-output-parser-EN.md)
+
+**核心内容**：
+- OutputParser 类型层次和核心接口
+- StrOutputParser、JsonOutputParser、PydanticOutputParser 详解
+- 创建自定义 OutputParser
+- 类型安全的数据提取
+- OutputParser vs `with_structured_output()` 对比
+
+**关键洞察**：
+> OutputParser 将 LLM 输出从非结构化文本转换为类型安全的数据结构！
+
+---
+
 ## 🎨 架构总览
 
 ```
@@ -177,11 +207,11 @@ translator = RunnableParallel(
 
 ## 📊 学习统计
 
-- **总模块数**：7 个核心模块
-- **文档数量**：14+ 个文件（中英双语）
-- **代码示例**：70+ 个实际例子
-- **Mermaid 图表**：20+ 个架构可视化
-- **知识挑战**：40+ 个测试问题
+- **总模块数**：9 个核心模块
+- **文档数量**：18+ 个文件（中英双语）
+- **代码示例**：90+ 个实际例子
+- **Mermaid 图表**：25+ 个架构可视化
+- **知识挑战**：50+ 个测试问题
 - **可运行示例**：4 个完整示例程序
 
 ---
@@ -274,6 +304,8 @@ See [examples/README.md](./examples/README.md) for usage instructions.
 | 3 | [链接](./module-03-prompts-implementation-ZH.md) | [Link](./module-03-prompts-implementation-EN.md) | Prompts 实现 |
 | 4-6 | [链接](./module-04-05-06-summary-ZH.md) | [Link](./module-04-05-06-summary-EN.md) | 完整流程 |
 | 7 | [链接](./module-07-runnable-parallel-ZH.md) | [Link](./module-07-runnable-parallel-EN.md) | 并行执行 |
+| 8 | [链接](./module-08-runnable-lambda-ZH.md) | [Link](./module-08-runnable-lambda-EN.md) | 函数集成 |
+| 9 | [链接](./module-09-output-parser-ZH.md) | [Link](./module-09-output-parser-EN.md) | 输出解析 |
 
 ### 辅助资源 | Supporting Resources
 
